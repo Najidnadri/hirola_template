@@ -4,6 +4,15 @@ use crate::components::molecule::header::Header;
 use crate::styling;
 
 
+/// WELCOME TO ONE OF THE PAGE IN HIROLA APP!
+/// First thing first, if you want a blank template of this page, go to blank_page.rs
+/// 
+/// One page divided into 3 parts, STATE, RENDERER, and STYLE
+/// STATE: Hold the state of the page, you can make it reactive by wrap the value with a Signal wrapper
+/// RENDERER: a function that will passed on to the renderer, the function return a Dom
+/// STYLE: Hold the style, please note that the style is not scoped and may leak to the child component
+
+
 //--------- PAGE STATE -----------
 
 pub struct PageState {

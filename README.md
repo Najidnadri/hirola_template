@@ -10,6 +10,11 @@ Converting from a Javascript/Typescript framework to a Rust wasm framework is no
 
 ## Usage
 
+Make sure you have the latest Rust
+```
+rustup update
+```
+
 Install cargo generate 
 ```
 cargo install cargo-generate

@@ -23,7 +23,7 @@ pub fn Header(router: Router) -> Dom {
                 </p>
                 <nav class="nav">
                     <a mixin::route=&router.link() href="/">"Home"</a>
-                    <a mixin::route=&router.link() href="/counter" class="about">"About Us"</a>
+                    <a mixin::route=&router.link() href="/about" class="about">"About Us"</a>
                 </nav>
             </div>
         </div> 
