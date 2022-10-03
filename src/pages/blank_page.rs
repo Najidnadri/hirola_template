@@ -30,9 +30,9 @@ impl Default for PageState {
 pub fn _blank_page(_app: &HirolaApp) -> Dom {
     let _state = PageState::default();
     html!{
-        <>
+        <div>
 
-        </>
+        </div>
     }
 }
 

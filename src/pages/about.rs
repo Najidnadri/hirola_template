@@ -18,17 +18,15 @@ pub fn about(app: &HirolaApp) -> Dom {
     let router = app.data::<Router>().unwrap().clone();
 
     html!{
-        <>  
-            <div>
-                <Style />
-                <div class="homebody">
-                    <Header router={(&router).clone()} />
-                    <div class="about-container">
-                        <h1>"This is an About Page"</h1>
-                    </div>
+        <div>
+            <Style />
+            <div class="homebody">
+                <Header router={(&router).clone()} />
+                <div class="about-container">
+                    <h1>"This is an About Page"</h1>
                 </div>
             </div>
-        </>
+        </div>
     }
 }
 

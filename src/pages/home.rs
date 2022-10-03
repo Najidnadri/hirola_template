@@ -68,25 +68,23 @@ pub fn home(app: &HirolaApp) -> Dom {
 
 
     html!{
-        <>
-            <div>
-                <Style />
-                <div class="homebody">
-                    <Header router={(&router).clone()} />
-                    <div class="intro">
-                        <h1>"What's next?"</h1>
-                        <p>"Try reading the official documentation "<a href="https://hirola-docs.vercel.app/" target="blank">"here"</a></p>
-                        <div class="counter">
-                            <h2>"Meanwhile..."</h2>
-                            <p>"Check out this counter I made"</p>
-                            <p class="output">{state.state.get().counter}</p>
-                            <button on:click=plus_one class="increase">"Increment One"</button>
-                            <button on:click=minus_one class="decrease">"Decrease One"</button>
-                        </div>
+        <div>
+            <Style />
+            <div class="homebody">
+                <Header router={(&router).clone()} />
+                <div class="intro">
+                    <h1>"What's next?"</h1>
+                    <p>"Try reading the official documentation "<a href="https://hirola-docs.vercel.app/" target="blank">"here"</a></p>
+                    <div class="counter">
+                        <h2>"Meanwhile..."</h2>
+                        <p>"Check out this counter I made"</p>
+                        <p class="output">{state.state.get().counter}</p>
+                        <button on:click=plus_one class="increase">"Increment One"</button>
+                        <button on:click=minus_one class="decrease">"Decrease One"</button>
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     }
 }
 

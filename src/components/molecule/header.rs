@@ -10,7 +10,7 @@ use crate::styling;
 
 //------------ RENDERER -----------
 #[component]
-pub fn Header(router: Router) -> Dom {
+pub fn Header(router: Router) -> Dom {  
     html!{ 
         <div>
             <Style />
