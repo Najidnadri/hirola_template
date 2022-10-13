@@ -37,9 +37,12 @@ And that's it. Enter your project developer and you can now start developing wit
 trunk serve
 ```
 
-
+Once you are satisfied with your app. You can build in release mode the app by running
+```
+trunk build --release
+```
 
 ## Note
 
-Since Hirola is still under development, breaking changes may happen, same as this template. If you are looking for something more matured and stable. I recommend Yew, Percy, Seed, Perseus or Sycamore. 
+Since Hirola is still under development, breaking changes may happen, same as this template. If you are looking for something more matured and stable. I recommend Yew, Percy, Seed, or Perseus. 
 

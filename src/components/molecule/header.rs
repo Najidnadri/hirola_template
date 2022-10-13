@@ -32,7 +32,7 @@ pub fn Header(router: Router) -> Dom {
 
 
 //--------- STYLING ---------
-styling!{r##"
+styling!{Style, r##"
 .header {
     padding: 1em 2em;
     height: 100%;

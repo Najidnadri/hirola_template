@@ -31,7 +31,7 @@ pub fn _blank_page(_app: &HirolaApp) -> Dom {
     let _state = PageState::default();
     html!{
         <div>
-
+            <Style />
         </div>
     }
 }
@@ -39,6 +39,6 @@ pub fn _blank_page(_app: &HirolaApp) -> Dom {
 
 
 //--------- STYLING ---------
-styling! {r##"
+styling! {Style, r##"
 
 "##}

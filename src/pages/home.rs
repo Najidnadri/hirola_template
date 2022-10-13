@@ -1,7 +1,7 @@
 use hirola::prelude::*;
-use web_sys::Event;
+use web_sys::{Event, window};
 use crate::components::molecule::header::Header;
-use crate::styling;
+use crate::{styling, log, get_element_by_id};
 
 
 /// WELCOME TO ONE OF THE PAGE IN HIROLA APP!
@@ -40,7 +40,7 @@ impl Default for PageState {
 //------- PAGE STATE IMPL ------
 impl PageState {
     fn plus_one(&self) -> Box<dyn Fn(Event)> {
-        self.state.callback(|st, _| {
+        self.state.callback(|st, e: Event| {
             let state = st.get();
             st.set(HomeState{ counter: state.counter + 1});
         })
@@ -79,7 +79,7 @@ pub fn home(app: &HirolaApp) -> Dom {
                         <h2>"Meanwhile..."</h2>
                         <p>"Check out this counter I made"</p>
                         <p class="output">{state.state.get().counter}</p>
-                        <button on:click=plus_one class="increase">"Increment One"</button>
+                        <button on:click=plus_one class="increase" id="inc">"Increment One"</button>
                         <button on:click=minus_one class="decrease">"Decrease One"</button>
                     </div>
                 </div>
@@ -92,7 +92,7 @@ pub fn home(app: &HirolaApp) -> Dom {
 
 //--------- STYLING ---------
 
-styling!{r##"
+styling!{Style, r##"
 .homebody {
     padding: 2em 5em;
     width: 100%;

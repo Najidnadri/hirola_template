@@ -1,5 +1,6 @@
 [package]
 name = "{{project-name}}"
+# name = "hirola-template"
 version = "0.1.0"
 edition = "2021"
 
@@ -7,4 +8,14 @@ edition = "2021"
 
 [dependencies]
 hirola = { version = "0.2.0", features = ["router", "global-state"] }
-web-sys = "0.3.60"
+wasm-bindgen = {version = "0.2"}
+console_error_panic_hook = "0.1.7"
+
+
+[dependencies.web-sys]
+version = "0.3.60"
+features = [
+    "Window",
+    "DomTokenList",
+    "HtmlInputElement",
+]

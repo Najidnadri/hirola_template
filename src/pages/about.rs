@@ -24,6 +24,7 @@ pub fn about(app: &HirolaApp) -> Dom {
                 <Header router={(&router).clone()} />
                 <div class="about-container">
                     <h1>"This is an About Page"</h1>
+                    <img src="../asset/walking_duck.gif" />
                 </div>
             </div>
         </div>
@@ -33,7 +34,7 @@ pub fn about(app: &HirolaApp) -> Dom {
 
 
 //--------- STYLING ---------
-styling! {r##"
+styling! {Style, r##"
 .homebody {
     padding: 2em 5em;
     width: 100%;
