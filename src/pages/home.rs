@@ -161,6 +161,7 @@ styling!{Style, r##"
     margin: 3px auto;
     border-radius: 5px;
     padding: 5px 0;
+    border: none;
 }
 
 .increase:active {

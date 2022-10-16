@@ -37,13 +37,12 @@ macro_rules! styling {
 }
 
 /// Shorthand for `web_sys::console::log_1()` function from `web_sys` crate. Literally just `console.log()` version of wasm in rust.
-/// Great for debugging events.
 /// 
 /// ## Example
 /// ```rust, no_run
 /// fn your_page(_app: &HirolaApp) -> Dom {
 ///    let custom_callback = Box::new(move |e: Event| {
-///         log!("{}", e.to_string());
+///         format_log!("{}", e.to_string());
 ///    });
 ///     
 ///     html! {
@@ -56,10 +55,44 @@ macro_rules! styling {
 ///     }
 /// }
 /// ```
+/// 
+/// ## Note
+/// Debugging with this macro will be a bit hard since the value will be printed as a `String` instead of `JsValue`. To print out values as `JsValue`,
+/// use [`log!`] instead.
 #[macro_export]
-macro_rules! log {
+macro_rules! format_log {
     ( $( $t:tt )* ) => {
         web_sys::console::log_1(&format!( $( $t )* ).into());
+    }
+}
+
+/// Shorthand for `web_sys::console::log_1()` function from `web_sys` crate. Literally just `console.log()` version of wasm in rust.
+/// 
+/// ## Example
+/// ```rust, no_run
+/// fn your_page(_app: &HirolaApp) -> Dom {
+///    let custom_callback = Box::new(move |e: Event| {
+///         log!(&e.into());
+///    });
+///     
+///     html! {
+///         <div>
+///             <MyStyle />
+///             <div>
+///                 <input type="text" oninput=custom_callback />
+///             </div>
+///         </div>
+///     }
+/// }
+/// ```
+/// 
+/// ## Note
+/// [`log!`] macro will take a [JsValue](https://rustwasm.github.io/wasm-bindgen/api/wasm_bindgen/struct.JsValue.html) as the argument. if you just
+/// want to print with a `String`, consider [`format_log!`].
+#[macro_export]
+macro_rules! log {
+    ($data:expr) => {
+        web_sys::console::log_1($data);
     }
 }
 
@@ -71,6 +104,8 @@ macro_rules! get_element_by_id {
     };
 }
 
+
+///shorthand for `web_sys::window().unwrap().document().unwrap().get_elements_by_class_name()` function
 #[macro_export]
 macro_rules! get_elements_by_class {
     ($class:expr) => {

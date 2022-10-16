@@ -39,6 +39,12 @@ fn main() {
 
         html!{
             <div>
+                <style>r##"
+                body {
+                    margin: 0;
+                    box-sizing: border-box;
+                }
+                "##</style>
                 {router.render(&app)}
             </div>
         }

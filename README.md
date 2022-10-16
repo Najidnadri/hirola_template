@@ -32,7 +32,7 @@ cargo generate Najidnadri/hirola_template
 
 
 
-And that's it. Enter your project developer and you can now start developing with hot reloading using this command
+And that's it. Enter your project development folder and you can now start developing with hot reloading using this command
 ```
 trunk serve
 ```
@@ -45,4 +45,11 @@ trunk build --release
 ## Note
 
 Since Hirola is still under development, breaking changes may happen, same as this template. If you are looking for something more matured and stable. I recommend Yew, Percy, Seed, or Perseus. 
+
+## Tips
+
+One of your bestfriend when developing WASM in rust would be the [web_sys](https://crates.io/crates/web-sys) crate. `web_sys` makes it easy for you to get most of the browser instances.
+Try interacting and exploring how to use the crate. 
+
+After that you can try looking at [gloo](https://crates.io/crates/gloo), and its siblings crates. When developing with `web_sys` and `wasm_bindgen` you will notice there will be a lot of boilerplates. `gloo` takes away the boilerplate for you. However, I really recommend you to not jump straight into `gloo` and instead learn how `web_sys` and `wasm_bindgen` works. 
 
