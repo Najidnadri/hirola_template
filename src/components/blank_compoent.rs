@@ -28,7 +28,7 @@ impl Default for PageState {
 
 //------------ RENDERER -----------
 #[component]
-pub fn BlankComponent(_app: &HirolaApp) -> Dom {
+pub fn BlankComponent() -> Dom {
     let _state = PageState::default();
     html!{
         <div>

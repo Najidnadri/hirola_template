@@ -1,7 +1,7 @@
 use hirola::prelude::*;
-use web_sys::{Event, window};
+use web_sys::Event;
 use crate::components::molecule::header::Header;
-use crate::{styling, log, get_element_by_id};
+use crate::styling;
 
 
 /// WELCOME TO ONE OF THE PAGE IN HIROLA APP!
@@ -40,7 +40,7 @@ impl Default for PageState {
 //------- PAGE STATE IMPL ------
 impl PageState {
     fn plus_one(&self) -> Box<dyn Fn(Event)> {
-        self.state.callback(|st, e: Event| {
+        self.state.callback(|st, _e: Event| {
             let state = st.get();
             st.set(HomeState{ counter: state.counter + 1});
         })
